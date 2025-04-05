@@ -297,39 +297,141 @@ let defaultTimetable = [
       }
     ]
   },
-  // Wednesday, Thursday, Friday, Saturday, Sunday...
-  // (Continue similarly for each day: Wednesday, Thursday, Friday, Saturday, Sunday)
+
   {
     day: "Wednesday - Shoulders + Core + Cardio",
     sections: [
-      // ...
+      {
+        title: "Warmup",
+        exercises: [
+          { name: "Shoulder Rotations", sets: "3x30 sec", video: "https://www.youtube.com/embed/ImVb7ZzWukY" },
+          { name: "Arm Swings", sets: "3x15 sec", video: "https://www.youtube.com/embed/3WtVJ1o5ZtA" },
+          { name: "Jumping Jacks", sets: "2x30 sec", video: "https://www.youtube.com/embed/c4DAnQ6DtF8" }
+        ]
+      },
+      {
+        title: "Shoulder Exercises",
+        exercises: [
+          { name: "Overhead Press", sets: "4x10", video: "https://www.youtube.com/embed/qEwKCR5JCog" },
+          { name: "Dumbbell Lateral Raises", sets: "4x12", video: "https://www.youtube.com/embed/kDqklk1ZESo" },
+          { name: "Rear Delt Flyes", sets: "4x12", video: "https://www.youtube.com/embed/pYcpY20QaE8" },
+          { name: "Arnold Press", sets: "3x10", video: "https://www.youtube.com/embed/6Z15N6m2nXk" }
+        ]
+      },
+      {
+        title: "Core Exercises",
+        exercises: [
+          { name: "Plank Variations", sets: "4x45 sec", video: "https://www.youtube.com/embed/pSHjTRCQxIw" },
+          { name: "Ab Wheel Rollouts", sets: "3x10", video: "https://www.youtube.com/embed/--6xFZ4x2Uc" },
+          { name: "Bicycle Crunches", sets: "3x20", video: "https://www.youtube.com/embed/9FGilxCbdz8" }
+        ]
+      },
+      {
+        title: "Cardio Finisher",
+        exercises: [
+          { name: "HIIT Cardio", sets: "15 minutes", video: "https://www.youtube.com/embed/ml6cT4AZdqI" }
+        ]
+      },
+      {
+        title: "Cool Down",
+        exercises: [
+          { name: "Shoulder & Core Stretch", sets: "3x30 sec", video: "https://www.youtube.com/embed/3tKEJqEBmA4" },
+          { name: "Foam Rolling", sets: "3x30 sec", video: "https://www.youtube.com/embed/3qH5bybUFjY" }
+        ]
+      }
     ]
   },
   {
     day: "Thursday - Legs + Cardio",
     sections: [
-      // ...
+      {
+        title: "Warmup",
+        exercises: [
+          { name: "High Knees", sets: "3x30 sec", video: "https://www.youtube.com/embed/Od5O_dxu2b8" },
+          { name: "Leg Swings", sets: "3x15 sec", video: "https://www.youtube.com/embed/gAn3OPzNnVg" },
+          { name: "Dynamic Lunges", sets: "2x10 per leg", video: "https://www.youtube.com/embed/IO6aB_PTV3Y" }
+        ]
+      },
+      {
+        title: "Leg Exercises",
+        exercises: [
+          { name: "Squats", sets: "4x10", video: "https://www.youtube.com/embed/aclHkVaku9U" },
+          { name: "Leg Press", sets: "4x12", video: "https://www.youtube.com/embed/IZxyjW7MPJQ" },
+          { name: "Bulgarian Split Squats", sets: "4x10 per leg", video: "https://www.youtube.com/embed/2C-uNgKwPLE" },
+          { name: "Lunges", sets: "3x12 per leg", video: "https://www.youtube.com/embed/D7KaRcUTQeE" },
+          { name: "Hamstring Curls", sets: "4x12", video: "https://www.youtube.com/embed/1Tq3QdYUuHs" },
+          { name: "Calf Raises", sets: "4x15", video: "https://www.youtube.com/embed/YMmgqO8Jo-k" }
+        ]
+      },
+      {
+        title: "Cardio Finisher",
+        exercises: [
+          { name: "Treadmill Run", sets: "15 minutes", video: "https://www.youtube.com/embed/NXvIRK_OYWE" }
+        ]
+      },
+      {
+        title: "Cool Down",
+        exercises: [
+          { name: "Quad Stretch", sets: "3x30 sec", video: "https://www.youtube.com/embed/9DdWcq5-8Ac" },
+          { name: "Hamstring Stretch", sets: "3x30 sec", video: "https://www.youtube.com/embed/oJk8SHte1V8" },
+          { name: "Yoga Poses", sets: "2x1 min", video: "https://www.youtube.com/embed/YR8O5fl2Uqw" }
+        ]
+      }
     ]
   },
   {
     day: "Friday - Arms & Core",
     sections: [
-      // ...
+      {
+        title: "Warmup",
+        exercises: [
+          { name: "Arm Swings", sets: "3x30 sec", video: "https://www.youtube.com/embed/3lQR7MR9obY" },
+          { name: "Wrist Rotations", sets: "3x15 sec", video: "https://www.youtube.com/embed/zm_HzjbF0O0" }
+        ]
+      },
+      {
+        title: "Arm Exercises",
+        exercises: [
+          { name: "Barbell Curls", sets: "4x10", video: "https://www.youtube.com/embed/kwG2ipFRgfo" },
+          { name: "Dumbbell Hammer Curls", sets: "4x10", video: "https://www.youtube.com/embed/zC3nLlEvin4" },
+          { name: "Triceps Dips", sets: "4x12", video: "https://www.youtube.com/embed/0326dy_-CzM" },
+          { name: "Skull Crushers", sets: "4x10", video: "https://www.youtube.com/embed/d_KZxkY_0cM" },
+          { name: "Cable Triceps Extensions", sets: "3x12", video: "https://www.youtube.com/embed/2-LAMcpzODU" }
+        ]
+      },
+      {
+        title: "Core Exercises",
+        exercises: [
+          { name: "Plank", sets: "4x45 sec", video: "https://www.youtube.com/embed/pSHjTRCQxIw" },
+          { name: "Hanging Leg Raises", sets: "4x12", video: "https://www.youtube.com/embed/HRV7aT6Kg_0" },
+          { name: "Russian Twists", sets: "4x20", video: "https://www.youtube.com/embed/wkD8rjkodUI" }
+        ]
+      },
+      {
+        title: "Cool Down",
+        exercises: [
+          { name: "Arm & Core Stretch", sets: "3x30 sec", video: "https://www.youtube.com/embed/3tKEJqEBmA4" },
+          { name: "Foam Rolling (Arms)", sets: "3x30 sec", video: "https://www.youtube.com/embed/3qH5bybUFjY" }
+        ]
+      }
     ]
   },
   {
-    day: "Saturday - Full Body Booster & Extended Cardio",
+    day: "Saturday - Rest Day",
     sections: [
-      // ...
-    ]
-  },
-  {
-    day: "Sunday - Rest Day",
-    sections: [
-      // ...
+      {
+        title: "Active Recovery",
+        exercises: [
+          { name: "Light Stretching / Walk", sets: "30 minutes", video: "https://www.youtube.com/embed/5yNfQAFtGko" },
+          { name: "Yoga / Meditation", sets: "20 minutes", video: "https://www.youtube.com/embed/v7AYKMP6rOE" }
+        ]
+      }
     ]
   }
 ];
+  // Wednesday, Thursday, Friday, Saturday, Sunday...
+  // (Continue similarly for each day: Wednesday, Thursday, Friday, Saturday, Sunday)
+  
 
 /** 2) One Muscle per Day (6 days: Monday–Saturday) **/
 let oneMuscleTimetable = [
