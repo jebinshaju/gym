@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full-Fledged Workout & Food Planner</title>
+  <!-- Google Fonts: Using Rubik -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS (for utility classes) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Hamburger Icon -->
+  <div id="hamburger">&#9776;</div>
+  <!-- Sidebar Navigation -->
+  <div id="sidebar">
+    <div id="sidebarClose">&times;</div>
+    <ul>
+      <li><a href="#" onclick="showPage('workoutPage'); closeSidebar();">Workout Timetable</a></li>
+      <li><a href="#" onclick="showPage('customizePage'); closeSidebar();">Customize Workout</a></li>
+      <li><a href="#" onclick="showPage('historyPage'); closeSidebar();">History</a></li>
+      <li><a href="#" onclick="showPage('macrosPage'); closeSidebar();">Food Macros</a></li>
+    </ul>
+  </div>
+  
+  <!-- Main Content Container -->
+  <div id="mainContent">
+    <!-- Workout Timetable Page -->
+    <div id="workoutPage" class="active">
+      <header class="text-center mb-4">
+        <h1>Workout Timetable</h1>
+        <p>Mark exercises as complete, view demos, and edit video URLs if needed.</p>
+      </header>
+      <!-- Active split display -->
+      <div id="activeSplitDisplay" class="text-center text-lg mb-2"></div>
+      <!-- In-page toggles for Day vs Muscle View -->
+      <div class="nav-container" id="viewToggle">
+        <button id="viewDay" class="toggle-button active">View by Day</button>
+        <button id="viewMuscle" class="toggle-button">View by Muscle Group</button>
+      </div>
+      <!-- Day Navigation (visible in Day view) -->
+      <div id="dayNav" class="nav-container"></div>
+      <!-- Muscle Filter (visible in Muscle view) -->
+      <div id="muscleFilter" class="filter-container" style="display:none;">
+        <select id="muscleSelect">
+          <option value="all">All</option>
+          <option value="chest">Chest</option>
+          <option value="triceps">Triceps</option>
+          <option value="back">Back</option>
+          <option value="biceps">Biceps</option>
+          <option value="legs">Legs</option>
+          <option value="shoulders">Shoulders</option>
+          <option value="core">Core</option>
+          <option value="cardio">Cardio</option>
+          <option value="active">Active Recovery</option>
+        </select>
+      </div>
+      <!-- Workout Content -->
+      <main id="workoutContent"></main>
+    </div>
+    
+    <!-- Customize Workout Page -->
+    <div id="customizePage">
+      <header class="text-center mb-4">
+        <h1>Customize Your Workout</h1>
+        <p>Select a split to generate your routine.</p>
+      </header>
+      <div class="text-center mb-4">
+        <select id="splitSelect">
+          <option value="default">Default Split (6 Workouts, 1 Rest)</option>
+          <option value="oneMuscle">One Muscle per Day (6 days)</option>
+          <option value="fullBody">Full Body Workout (3 days)</option>
+          <option value="pushPull">Push/Pull Split (4 days)</option>
+        </select>
+        <button onclick="applySplit()" class="toggle-button mt-2">Apply</button>
+      </div>
+      <p class="text-center">(The routine will be updated in the Workout Timetable page.)</p>
+    </div>
+    
+    <!-- History Page -->
+    <div id="historyPage">
+      <header class="text-center mb-4">
+        <h1>Exercise History</h1>
+        <p>Review your completed exercises.</p>
+      </header>
+      <div id="historyContent" class="mb-4"></div>
+      <div class="text-center">
+        <button onclick="clearHistory()" class="toggle-button">Clear History</button>
+      </div>
+    </div>
+    
+    <!-- Food Macros Page -->
+    <div id="macrosPage">
+      <header class="text-center mb-4">
+        <h1>Kerala Cuisine Macro Counts</h1>
+        <p>Macros for rice, kappa, chakka, puttu and popular curries.</p>
+      </header>
+      <table>
+        <thead>
+          <tr>
+            <th>Food Item</th>
+            <th>Calories</th>
+            <th>Protein (g)</th>
+            <th>Carbs (g)</th>
+            <th>Fat (g)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rice (1 cup)</td>
+            <td>200</td>
+            <td>4</td>
+            <td>44</td>
+            <td>0.4</td>
+          </tr>
+          <tr>
+            <td>Kappa (Tapioca, 100g)</td>
+            <td>160</td>
+            <td>1.2</td>
+            <td>38</td>
+            <td>0.3</td>
+          </tr>
+          <tr>
+            <td>Chakka (Jackfruit, 100g)</td>
+            <td>95</td>
+            <td>1.7</td>
+            <td>23</td>
+            <td>0.6</td>
+          </tr>
+          <tr>
+            <td>Puttu (1 serving)</td>
+            <td>250</td>
+            <td>6</td>
+            <td>50</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>Fish Curry (1 serving)</td>
+            <td>300</td>
+            <td>25</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
+          <tr>
+            <td>Vegetable Curry (1 serving)</td>
+            <td>180</td>
+            <td>4</td>
+            <td>25</td>
+            <td>7</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Modal for Editing Video URL -->
+  <div id="modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-gray-800 p-6 rounded shadow-lg max-w-sm w-full">
+      <h2 class="text-xl mb-4">Edit Video URL</h2>
+      <input id="modalInput" type="text" class="w-full p-2 rounded mb-4 bg-gray-700 text-white" />
+      <div class="text-right">
+        <button id="modalSave" class="toggle-button">Save</button>
+        <button id="modalCancel" class="toggle-button ml-2">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for Adding New Exercise -->
+  <div id="addExerciseModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-gray-800 p-6 rounded shadow-lg max-w-sm w-full">
+      <h2 class="text-xl mb-4">Add New Exercise</h2>
+      <input id="newExName" type="text" placeholder="Exercise Name" class="w-full p-2 rounded mb-2 bg-gray-700 text-white" />
+      <input id="newExSets" type="text" placeholder="Sets/Rep (e.g., 3x10)" class="w-full p-2 rounded mb-2 bg-gray-700 text-white" />
+      <input id="newExURL" type="text" placeholder="YouTube Embed URL" class="w-full p-2 rounded mb-4 bg-gray-700 text-white" />
+      <div class="text-right">
+        <button id="addExSave" class="toggle-button">Save</button>
+        <button id="addExCancel" class="toggle-button ml-2">Cancel</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
