@@ -1,6 +1,6 @@
 
 
-# Workout Planner
+# Workout Planner (fun projects just done out of boredom :) )
 
 A comprehensive web-based workout and food planner designed to help users manage their workout routines and track food macros. This project offers customizable workout splits, persistent data storage via localStorage, interactive modals for editing exercise details, and a dedicated history page to review completed workouts.
 
